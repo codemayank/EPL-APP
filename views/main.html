@@ -1,0 +1,39 @@
+
+<div class="jumbotron jumbotron-fluid">
+ 	<div class="container">
+	    <h1 class="display-3">English Premier League</h1>
+	    <p class="lead">On here you will find the details of all the English Premier league Matches played between 2015-16 and 2016-17</p>
+	    <label>Filter by Year</label>
+	    <select ng-model = "mainCtrl.Year">
+	    	<option value="2015">2015</option>
+	    	<option value="2016">2016</option>
+	    	<option value="2017">2017</option>
+	    </select>
+	    <label>Filter by Team</label>
+	    <select ng-model = "mainCtrl.searchTeam">
+	    	<option ng-repeat = "team in mainCtrl.teamArray">{{team}}</option>
+	    </select>
+	    <a class="btn btn-primary" role="button" ng-click="mainCtrl.reset()">Reset</a>
+  	</div>
+  	<div>
+  		<a class="btn btn-success mb-1 ml-3" role="button" href="#!/stats2015" ng-click="mainCtrl.statSelection = {season : '2015-2016', set: mainCtrl.teamStats2015}">Stats 2015 - 2016</a><br>
+  	</div>
+  	<div>
+  		<a class="btn btn-success ml-3" role="button" href="#!/stats2015" ng-click="mainCtrl.statSelection = {season : '2016-2017', set: mainCtrl.teamStats2016}">Stats 2016 - 2017</a><br>
+  	</div>
+
+  	
+
+</div>
+<table class="table table-hover">
+  <tbody>
+    <tr ng-repeat = "matches in mainCtrl.matches | filter : mainCtrl.Year | filter : mainCtrl.searchTeam">
+    		<td>{{matches.date}}</td>
+     		<td>{{matches.team1.name}}</td>
+      		<td>{{matches.score1}}-{{matches.score2}}</td>
+      		<td style = "text-align: right">{{matches.team2.name}}</td>
+      		<td><a class="btn btn-info" role="button" href="#!/matchview" ng-click = "mainCtrl.teamSummary(matches.id)">MatchDetails</a></td>
+			</tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,33 @@
+
+<a class="btn btn-primary" role="button" href="#!/main">Back</a>
+<div>
+	<h1>Statistics for {{mainCtrl.statSelection.season}} season of English Premier League</h1>
+	<table class="table table-striped">
+		<tr>
+			<th>Rank</td>
+			<th>Club</th>
+			<th>Pl</th>
+			<th>W</th>
+			<th>D</td>
+			<th>L</th>
+			<th>GF</th>
+			<th>GA</th>
+			<th>GD</th>
+			<th>Points</th>
+		</tr>
+		<tr ng-repeat = "matches in mainCtrl.statSelection.set | orderBy : '-goalDiff' |orderBy : '-totalPoints'">
+			<td>{{$index + 1}}</td>
+			<td>{{matches.teamName}}</td>
+			<td>{{matches.totalPlayed}}</td>
+			<td>{{matches.totalWon}}</td>
+			<td>{{matches.totalDraw}}</td>
+			<td>{{matches.totalLost}}</td>
+			<td>{{matches.goalsFor}}</td>
+			<td>{{matches.goalsAgainst}}</td>
+			<td>{{matches.goalDiff}}</td>
+			<td>{{matches.totalPoints}}</td>
+		</tr>
+	</table>
+	
+	
+</div>
