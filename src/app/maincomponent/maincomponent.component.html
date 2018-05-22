@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <th>Date of play</th>
+    <th>Team 1</th>
+    <th>Team 2</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let match of matches">
+      <td>{{match.dateOfPlay}}</td>
+      <td>{{match.team1}}</td>
+      <td>{{match.team2}}</td>
+      <td>
+        <a routerLink="/match/edit/{{match.id}}">Edt</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-primary" (click)="onLoadStats()">Load Stats</button>

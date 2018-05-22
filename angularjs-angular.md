@@ -9,3 +9,5 @@ ng new <appName> --directory ./
 ```
 This will create a fresh angular app in the same directory as your existing project resides and use the same git tracking.
 
+## Converting controller to components.
+

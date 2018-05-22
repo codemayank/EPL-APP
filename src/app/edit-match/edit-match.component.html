@@ -1,0 +1,13 @@
+<div class="form-group">
+  <label for="dateOfPlay">Date Of Play</label>
+  <input type="text" id="dateOfPlay" class="form-control" [(ngModel)]="dateOfPlay">
+</div>
+<div class="form-group">
+  <label for="team1">Team 1</label>
+  <input type="text" id="team1" class="form-control" [(ngModel)]="team1">
+</div>
+<div class="form-group">
+  <label for="team2">Team 2</label>
+  <input type="text" id="team2" class="form-control" [(ngModel)]="team2">
+</div>
+<button class="btn btn-success" (click)="onUpdateMatch()">Update Match</button>
